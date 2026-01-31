@@ -1,0 +1,26 @@
+image_generation_task:
+  description: |
+    ### Input:
+    - **user_prompt:** {user_prompt}
+
+    Generate an image based on the user's prompt description.
+
+    Steps:
+    1. Analyze the user's prompt to understand the desired image
+    2. Enhance the prompt with details about style, lighting, composition, and quality
+    3. Use the image generation tool to create the image
+    4. Return the generated image URL
+
+    Guidelines:
+    - Add artistic details to improve image quality (e.g., "high quality, detailed, 4k")
+    - Consider appropriate style keywords (e.g., "photorealistic", "digital art", "illustration")
+    - Ensure the prompt is clear and descriptive
+
+  expected_output: >
+    A JSON object with the following structure, WITHOUT RETURNING '''json''' only start with {:
+      - `user_prompt`: The original user prompt (string)
+      - `enhanced_prompt`: The enhanced prompt used for generation (string)
+      - `image_url`: The URL of the generated image (string)
+      - `status`: Success or error status (string)
+
+  agent: image_generation
